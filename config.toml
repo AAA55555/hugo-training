@@ -1,0 +1,54 @@
+baseURL = "https://training.org/"
+languageCode = "en-us"
+defaultContentLanguage = "en"
+title = "Blog Ivan Ivanov"
+theme = "training"
+author = "Author"
+paginate = 5
+
+copyright = "© Footer"
+
+[taxonomies]
+	tag = "tags"
+	category = "categories"
+	series = "series"
+
+[params]
+avatar = "img/person.svg"
+subtitle = "Training - это тема блога для Hugo, которая является учебной."
+keywords = ["test","theme"]
+
+[[params.social]]
+name = "Github"
+icon = "fab fa-github"
+url = "https://github.com/"
+
+[[params.social]]
+name = "Email"
+icon = "fas fa-envelope"
+url = "#"
+
+[[menu.main]]
+name = "Home"
+url = "/home"
+weight = 1
+
+[[menu.main]]
+name = "All Posts"
+url = "/post"
+weight = 2
+
+[[menu.main]]
+name = "About"
+url = "/about"
+weight = 3
+
+[[menu.main]]
+name = "Tags"
+url = "/tags"
+weight = 4
+
+[[menu.main]]
+name = "Categories"
+url = "/categories"
+weight = 5

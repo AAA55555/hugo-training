@@ -1,0 +1,45 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta property="og:title" content="{{ .Title }}" />
+  {{- with $.Param "author" -}}
+  <meta name="author" content="{{ . }}" />
+  {{- end -}} {{- if or .Params.tags $.Site.Params.keywords -}} <meta
+  name="keywords" content="{{ if .Params.tags }}{{ delimit .Params.tags "," }}{{
+  else }}{{ delimit $.Site.Params.keywords "," }}{{ end }}"> {{- end -}}
+  <link
+    rel="stylesheet"
+    type="text/css"
+    media="screen"
+    href="{{ $.Site.BaseURL }}css/normalize.css"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    media="screen"
+    href="{{ $.Site.BaseURL }}css/main.css"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    media="screen"
+    href="{{ $.Site.BaseURL }}css/all.css"
+  />
+
+  {{- if isset .Site.Params "customcss" -}}
+  <link
+    rel="stylesheet"
+    type="text/css"
+    media="screen"
+    href="{{ relURL .Site.Params.customCSS }}"
+  />
+  {{- end -}} {{- if .IsHome -}}
+  <title>
+    {{ .Site.Title }}{{ if isset .Site.Params "pagetitle" }} - {{
+    .Site.Params.Pagetitle }}{{ end }}
+  </title>
+  {{- else -}}
+  <title>{{ .Title }} | {{ .Site.Title }}</title>
+  {{- end -}}
+</head>
